@@ -1,0 +1,11 @@
+version: '3.0'
+services:
+
+  weather:
+    build: ./app
+    container_name: weather
+    restart: always
+    ports:
+      - 3001:3001
+    volumes:
+      - ./logs:/logs
