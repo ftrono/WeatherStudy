@@ -35,8 +35,7 @@ async def health(request: Request):
 def weather(input_data: WeatherInput):
     LOG.debug("WEATHER endpoint activated.")
     try:
-        y_pred = predict.predict(input_data)
-        response = {"RainTomorrow": int(y_pred)}
+        response = predict.predict(input_data)
         LOG.info("WEATHER endpoint SUCCESS.")
         return response
     

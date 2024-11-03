@@ -14,13 +14,14 @@ def predict(input_data: WeatherInput):
         best_pipe = commons.load_pipeline(os.path.join(SAVE_DIR, MODELNAME))
         LOG.info("Generating prediction...")
         Y_pred = best_pipe.predict(data)[0]
+        response = {"RainTomorrow": int(Y_pred)}
         LOG.info(f"Prediction success!")
-        return Y_pred
+        return response
 
     except Exception as e:
         LOG.error(f"Prediction error!")
         LOG.exception(e)
-        return -1
+        return {"error": "endpoint_error"}
 
 
 #MAIN:
