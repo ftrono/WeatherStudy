@@ -22,4 +22,4 @@ The dataset is a .csv file containing some weather data (temperature, humidity, 
 
 To simplify the task, I am assuming that the Weather Prediction endpoint can be called at arbitrary points in time (i.e. an API call will not contain data from the previous days) and that the model shoud be able to generalize the predictions regardless of the location of the input data.
 
-After testing 4 alternative classifiers, the chosen prediction model is a **RandomForest Classifier** trained on the 7 features that were selected by the GridSearch Cross Validation process, which obtained an accuracy of **85.5%** on the test set. A README.md file explaining the process behind model selection can be found in the directory `app/prediction_model/experiments`.
+After testing 4 alternative classifiers, the chosen prediction model is a **RandomForest Classifier** trained on the 7 features that were selected by the GridSearch Cross Validation process, which obtained an accuracy of **85.5%** on the test set. A README.md file explaining the process behind model selection can be found in the directory `app/experiments`.

@@ -2,7 +2,9 @@ import os, requests, uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from app.logger import *
+from globals.globals import *
+from globals.logger import *
+import train
 
 
 class Item(BaseModel):
@@ -43,4 +45,11 @@ def weather(local_info: Item):
 
 #MAIN:
 if __name__ == '__main__':
+    if not os.path.exists(os.path.join(SAVE_DIR, MODELNAME)):
+        print("TRAINING THE MODEL. This might take a few minutes...")
+        LOG.info("TRAINING THE MODEL. This might take a few minutes...")
+        train.perform_training()
+    
+    print("STARTING THE ENDPOINT")
+    LOG.info("STARTING THE ENDPOINT")
     uvicorn.run(app, host='0.0.0.0', port=3001)

@@ -2,3 +2,6 @@
 py312
 app-test
 **/logs
+**/mlruns
+app/models/*
+!app/models/__init__.py
