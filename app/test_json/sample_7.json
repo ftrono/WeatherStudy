@@ -1,0 +1,27 @@
+{
+    "X": {
+        "Date": "2013-01-01",
+        "Location": "Cairns",
+        "MinTemp": 23.2,
+        "MaxTemp": 32.8,
+        "Rainfall": 20.4,
+        "Evaporation": 3.2,
+        "Sunshine": 6.2,
+        "WindGustDir": "SE",
+        "WindGustSpeed": 48,
+        "WindDir9am": "S",
+        "WindDir3pm": "SE",
+        "WindSpeed9am": 11,
+        "WindSpeed3pm": 31,
+        "Humidity9am": 92,
+        "Humidity3pm": 58,
+        "Pressure9am": 1010.7,
+        "Pressure3pm": 1008.2,
+        "Cloud9am": 8,
+        "Cloud3pm": 4,
+        "Temp9am": 24.6,
+        "Temp3pm": 30.5,
+        "RainToday": "Yes"
+    },
+    "Y": 1
+}

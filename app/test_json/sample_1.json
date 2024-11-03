@@ -1,0 +1,27 @@
+{
+    "X": {
+        "Date": "2011-12-03",
+        "Location": "Canberra",
+        "MinTemp": 7.7,
+        "MaxTemp": 24.2,
+        "Rainfall": 0,
+        "Evaporation": 4.8,
+        "Sunshine": 13.2,
+        "WindGustDir": "NNW",
+        "WindGustSpeed": 39,
+        "WindDir9am": "NNW",
+        "WindDir3pm": "NW",
+        "WindSpeed9am": 9,
+        "WindSpeed3pm": 20,
+        "Humidity9am": 67,
+        "Humidity3pm": 39,
+        "Pressure9am": 1018.4,
+        "Pressure3pm": 1014,
+        "Cloud9am": 1,
+        "Cloud3pm": 3,
+        "Temp9am": 13.5,
+        "Temp3pm": 22.7,
+        "RainToday": "No"
+    },
+    "Y": 1
+}

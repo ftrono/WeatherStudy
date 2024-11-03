@@ -1,0 +1,27 @@
+{
+    "X": {
+        "Date": "2013-09-25",
+        "Location": "Portland",
+        "MinTemp": 13,
+        "MaxTemp": 17,
+        "Rainfall": 0.2,
+        "Evaporation": 4.2,
+        "Sunshine": 8.6,
+        "WindGustDir": "WNW",
+        "WindGustSpeed": 65,
+        "WindDir9am": "NW",
+        "WindDir3pm": "WNW",
+        "WindSpeed9am": 33,
+        "WindSpeed3pm": 33,
+        "Humidity9am": 76,
+        "Humidity3pm": 69,
+        "Pressure9am": 1003.6,
+        "Pressure3pm": 1005.1,
+        "Cloud9am": 8,
+        "Cloud3pm": 1,
+        "Temp9am": 15.1,
+        "Temp3pm": 15.6,
+        "RainToday": "No"
+    },
+    "Y": 1
+}

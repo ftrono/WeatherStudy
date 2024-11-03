@@ -1,0 +1,27 @@
+{
+    "X": {
+        "Date": "2008-08-17",
+        "Location": "Darwin",
+        "MinTemp": 18.3,
+        "MaxTemp": 30.8,
+        "Rainfall": 0,
+        "Evaporation": 9.8,
+        "Sunshine": 10.8,
+        "WindGustDir": "E",
+        "WindGustSpeed": 44,
+        "WindDir9am": "SE",
+        "WindDir3pm": "SSE",
+        "WindSpeed9am": 26,
+        "WindSpeed3pm": 24,
+        "Humidity9am": 18,
+        "Humidity3pm": 8,
+        "Pressure9am": 1017.6,
+        "Pressure3pm": 1013.7,
+        "Cloud9am": 1,
+        "Cloud3pm": 1,
+        "Temp9am": 21.7,
+        "Temp3pm": 29.8,
+        "RainToday": "No"
+    },
+    "Y": 0
+}

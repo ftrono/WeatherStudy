@@ -1,0 +1,27 @@
+{
+    "X": {
+        "Date": "2014-10-06",
+        "Location": "Perth",
+        "MinTemp": 10.8,
+        "MaxTemp": 19.4,
+        "Rainfall": 8.8,
+        "Evaporation": 4.4,
+        "Sunshine": 11.1,
+        "WindGustDir": "S",
+        "WindGustSpeed": 31,
+        "WindDir9am": "SSE",
+        "WindDir3pm": "WSW",
+        "WindSpeed9am": 15,
+        "WindSpeed3pm": 15,
+        "Humidity9am": 56,
+        "Humidity3pm": 48,
+        "Pressure9am": 1023.5,
+        "Pressure3pm": 1021.7,
+        "Cloud9am": 4,
+        "Cloud3pm": 2,
+        "Temp9am": 14.8,
+        "Temp3pm": 18.2,
+        "RainToday": "Yes"
+    },
+    "Y": 0
+}

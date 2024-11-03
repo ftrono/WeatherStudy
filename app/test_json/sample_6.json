@@ -1,0 +1,27 @@
+{
+    "X": {
+        "Date": "2010-04-02",
+        "Location": "Cobar",
+        "MinTemp": 12.2,
+        "MaxTemp": 29,
+        "Rainfall": 0,
+        "Evaporation": 5.2,
+        "Sunshine": 11.3,
+        "WindGustDir": "SW",
+        "WindGustSpeed": 26,
+        "WindDir9am": "WNW",
+        "WindDir3pm": "WSW",
+        "WindSpeed9am": 2,
+        "WindSpeed3pm": 15,
+        "Humidity9am": 51,
+        "Humidity3pm": 21,
+        "Pressure9am": 1019,
+        "Pressure3pm": 1016,
+        "Cloud9am": 1,
+        "Cloud3pm": 1,
+        "Temp9am": 19,
+        "Temp3pm": 27.9,
+        "RainToday": "No"
+    },
+    "Y": 0
+}

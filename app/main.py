@@ -1,14 +1,13 @@
 import os, requests, uvicorn
-from fastapi import FastAPI
+import pandas as pd
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from WeatherInput import WeatherInput
 from globals.globals import *
 from globals.logger import *
+import predict
 import train
 
-
-class Item(BaseModel):
-    item_name: str
 
 app = FastAPI()
 
@@ -26,14 +25,18 @@ app.add_middleware(
 )
 
 
+@app.get("/")
+async def health(request: Request):
+    response={"status":"ok"}
+    return response
+
+
 @app.post("/weather")
-def weather(local_info: Item):
+def weather(input_data: WeatherInput):
     LOG.debug("WEATHER endpoint activated.")
     try:
-        data = local_info.model_dump()
-        #TODO
-        
-        response = {}
+        y_pred = predict.predict(input_data)
+        response = {"RainTomorrow": int(y_pred)}
         LOG.info("WEATHER endpoint SUCCESS.")
         return response
     
@@ -50,6 +53,6 @@ if __name__ == '__main__':
         LOG.info("TRAINING THE MODEL. This might take a few minutes...")
         train.perform_training()
     
-    print("STARTING THE ENDPOINT")
-    LOG.info("STARTING THE ENDPOINT")
+    print("Model already trained. STARTING THE ENDPOINT")
+    LOG.info("Model already trained. STARTING THE ENDPOINT")
     uvicorn.run(app, host='0.0.0.0', port=3001)

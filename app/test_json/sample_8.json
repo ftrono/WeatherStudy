@@ -1,0 +1,27 @@
+{
+    "X": {
+        "Date": "2013-03-18",
+        "Location": "Watsonia",
+        "MinTemp": 10.3,
+        "MaxTemp": 20.8,
+        "Rainfall": 0,
+        "Evaporation": 2.4,
+        "Sunshine": 4.7,
+        "WindGustDir": "SSW",
+        "WindGustSpeed": 31,
+        "WindDir9am": "N",
+        "WindDir3pm": "S",
+        "WindSpeed9am": 2,
+        "WindSpeed3pm": 13,
+        "Humidity9am": 87,
+        "Humidity3pm": 62,
+        "Pressure9am": 1024,
+        "Pressure3pm": 1023,
+        "Cloud9am": 7,
+        "Cloud3pm": 7,
+        "Temp9am": 13.7,
+        "Temp3pm": 18.2,
+        "RainToday": "No"
+    },
+    "Y": 0
+}

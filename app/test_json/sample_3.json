@@ -1,0 +1,27 @@
+{
+    "X": {
+        "Date": "2015-09-25",
+        "Location": "NorfolkIsland",
+        "MinTemp": 14.4,
+        "MaxTemp": 19.4,
+        "Rainfall": 4.8,
+        "Evaporation": 5.8,
+        "Sunshine": 10.1,
+        "WindGustDir": "W",
+        "WindGustSpeed": 61,
+        "WindDir9am": "SW",
+        "WindDir3pm": "SSW",
+        "WindSpeed9am": 30,
+        "WindSpeed3pm": 33,
+        "Humidity9am": 69,
+        "Humidity3pm": 62,
+        "Pressure9am": 1009.1,
+        "Pressure3pm": 1009.6,
+        "Cloud9am": 4,
+        "Cloud3pm": 3,
+        "Temp9am": 16.4,
+        "Temp3pm": 18.4,
+        "RainToday": "Yes"
+    },
+    "Y": 0
+}

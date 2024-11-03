@@ -11,7 +11,13 @@ from sklearn.ensemble import RandomForestClassifier
 # COMMON UTILITIES
 
 def preprocess_data(data: pd.DataFrame):
-    data = data.drop(columns=FEATURES_TO_REMOVE).dropna().reset_index(drop=True)
+    #remove features one by one (for endpoint tests):
+    for col in FEATURES_TO_REMOVE:
+        try:
+            data = data.drop(columns=col)
+        except:
+            pass
+    data = data.dropna().reset_index(drop=True)
     return data
     
 

@@ -1,0 +1,27 @@
+{
+    "X": {
+        "Date": "2013-08-23",
+        "Location": "Sydney",
+        "MinTemp": 11.8,
+        "MaxTemp": 18.6,
+        "Rainfall": 0,
+        "Evaporation": 4,
+        "Sunshine": 2.5,
+        "WindGustDir": "WNW",
+        "WindGustSpeed": 56,
+        "WindDir9am": "NW",
+        "WindDir3pm": "WNW",
+        "WindSpeed9am": 20,
+        "WindSpeed3pm": 28,
+        "Humidity9am": 50,
+        "Humidity3pm": 42,
+        "Pressure9am": 1010.2,
+        "Pressure3pm": 1008.5,
+        "Cloud9am": 7,
+        "Cloud3pm": 7,
+        "Temp9am": 14.8,
+        "Temp3pm": 17.4,
+        "RainToday": "No"
+    },
+    "Y": 0
+}
