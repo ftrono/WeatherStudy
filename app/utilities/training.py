@@ -1,5 +1,3 @@
-from globals.globals import *
-from utilities.commons import preprocess_data
 import joblib
 import pandas as pd
 import numpy as np
@@ -7,6 +5,8 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import GridSearchCV, train_test_split
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 from sklearn.pipeline import Pipeline
+from globals.globals import *
+from utilities.commons import preprocess_data
 
 
 # TRAINING
@@ -52,9 +52,11 @@ def get_best_model(sk_pipe: Pipeline, X_train: pd.DataFrame, Y_train: pd.Series,
 
 
 #Serialize:
-def save_pipeline(best_pipe: Pipeline, save_path: str):
+def save_pipeline(best_pipe: Pipeline, save_path: str, run_id: str):
     joblib.dump(best_pipe, save_path)
-    mlflow.register_model(save_path, MODELNAME)
+    # Register also to Model Registry (production-ready):
+    model_uri = f"runs:/{run_id}/{MODELNAME}"
+    mlflow.register_model(model_uri, MODELNAME)
     LOG.info(f"Pipeline saved!")
 
 
