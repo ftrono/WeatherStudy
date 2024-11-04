@@ -64,11 +64,11 @@ A few sample JSONs, extracted from the test set of the original dataset, can be 
 **B) Without Docker**
 * Position the bash terminal inside the ***home*** directory of the repo.
 * Run `source venv_setup.sh` to install and open the Python Environment.
-* Now, position the bash terminal inside the folder `app`. This will be the main directory to execute all code.
-* From the bash terminal, run `mlflow server --host 127.0.0.1 --port 5000` to start the MLFlow server and UI.
-* From the bash terminal, run `python3 main.py`.
+* Now, position the bash terminal inside the folder ***app*** (!). This will be the main directory to execute all code.
+* Within this folder, from the bash terminal, run `mlflow server --host 127.0.0.1 --port 5000` to start the MLFlow server and UI.
+* Within this folder, from the bash terminal, run `python3 main.py`.
 * The logs are accessible from the `logs` folder that will be automatically created in the directory `app/logs`. 
-* From MLFlow UI, the model run and stored model will be available after training.
+* From MLFlow UI, the run info, metrics and stored model will be available after training.
 
 **General notes:**
 
