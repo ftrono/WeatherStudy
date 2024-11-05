@@ -24,6 +24,8 @@ To simplify the task, I am assuming that the Weather Prediction endpoint can be 
 
 After testing 4 alternative classifiers, the chosen prediction model is a **RandomForest Classifier** trained on the 7 features that were selected by the GridSearch Cross Validation process, which obtained an accuracy of **85.5%** on the test set. A file explaining the process behind model selection can be found at `app/experiments/README.md`.
 
+The Y variable *"RainTomorrow"* has been converted in numeric format: 1 if "Yes", 0 if "No".
+
 ## Repo structure
 
 All the code is available in the folder `app`. The home directory contains the file `docker-compose.yml` and, for local runs only, two scripts to setup and run the Python venv (`venv_setup.sh` and `venv_run.sh`).
@@ -33,45 +35,47 @@ Inside the folder `app`, the following key files and directories can be found:
 * `experiments`: directory containing all the data science experiments and model tests.
 * `globals`: directory containing the Python globals for the app.
 * `models`: will contain the trained model after training.
+* `test`: directory containing two convenient Jupyter Notebook for testing.
 * `test_json`: directory containing some JSON input samples for test.
 * `utilities`: directory containing the Python functions used within the training and testing pipelines.
 * `main.py`: main app entry point. It executes the training and the FastAPI endpoint.
 * `train.py`: executes the training process.
 * `predict.py`: executes the prediction process.
 
-
-## Test samples
-A few sample JSONs, extracted from the test set of the original dataset, can be found in the directory `app/test_json`. The JSONs are structured as follows:
-```
-{
-    "X": {json object}
-    "Y": int
-}
-```
-
- To test the endpoint, please use as input *ONLY* the nested JSON object within the **"X" key**. The "Y" is the label ("RainTomorrow": 1 if Yes, 0, if No).
+---
 
 ## Instructions to run the code
 
-### **FastAPI**
+### **Using MLFlow**
+* Position the bash terminal inside the folder ***app*** of the repo.
+* (Optional) From the bash terminal, run `mlflow ui --backend-store-uri sqlite:///tracking/mlflow.db` to open MLFlow UI.
+* (First run only) From the bash terminal, run `python3 train.py` and wait for the completion of the training process. Logs can be monitored through the folder `app/logs`.
+* Then, run `export MLFLOW_TRACKING_URI="sqlite:///tracking/mlflow.db"`
+* (First run only) Then, run `mlflow models build-docker -m "models:/RandomForest/1" -n ml_weather` and wait for the completion of the container setup.
+* After the setup completion, run `docker run -p 5001:8080 ml_weather`
+* The endpoint available is http://localhost:5001/invocations (**POST**). To test it, a convenient Jupyter Notebook is available at `app/test/mlflow_test.ipynb`. Simply run the Notebook to test.
+
+---
+
+### **Using FastAPI**
 
 **A) With Docker**
 * Position the bash terminal inside the ***home*** directory of the repo.
 * From the bash terminal, run `docker-compose up --build`. 
 * The command will compile the Docker container that will execute the file `app/main.py`.
-* The logs are accessible from the `logs` folder that will be automatically created in the ***home*** directory.
+* The logs are accessible from the `logs` folder that will be automatically created in the ***home*** directory (exposed via bind mount).
 
 **B) Without Docker**
 * Position the bash terminal inside the ***home*** directory of the repo.
-* Run `source venv_setup.sh` to install and open the Python Environment.
+* Run `source venv_setup.sh` to install and open the Python Environment (first run only, otherwise you can run `source venv_run.sh`).
 * Now, position the bash terminal inside the folder ***app*** (!). This will be the main directory to execute all code.
-* Within this folder, from the bash terminal, run `mlflow server --host 127.0.0.1 --port 5000` to start the MLFlow server and UI.
+* (Optional) From the bash terminal, run `mlflow ui --backend-store-uri sqlite:///tracking/mlflow.db` to open MLFlow UI.
 * Within this folder, from the bash terminal, run `python3 main.py`.
 * The logs are accessible from the `logs` folder that will be automatically created in the directory `app/logs`. 
 * From MLFlow UI, the run info, metrics and stored model will be available after training.
 
-**General notes:**
+**General notes for FastAPI:**
 
-* Both the Docker container and the Python command will execute the file `main.py`, which automatically (in order): 1) trains the model, and 2) activates a FastAPI endpoint, which will be available at this URL: http://localhost:3001/weather (**POST**).
+* Both the Docker container and the Python command will execute the file `app/main.py`, which automatically (in order): 1) trains the model, and 2) activates the FastAPI endpoint.
 * Once the model is trained, it won't be trained again (unless the Docker container is rebuilt).
-* You can test the POST endpoint via Postman using one of the sample JSON files available in `app/test_json` (please use as input *ONLY* the nested JSON object within the "X" key).
+* The endpoint available is http://localhost:3001/weather (**POST**). To test it, a convenient Jupyter Notebook is available at `app/test/fastapi_test.ipynb`. Simply run the Notebook to test.

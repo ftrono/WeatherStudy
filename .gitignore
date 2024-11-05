@@ -5,3 +5,5 @@ app-test
 **/mlruns
 app/models/*
 !app/models/__init__.py
+app/tracking/*
+!app/tracking/__init__.py

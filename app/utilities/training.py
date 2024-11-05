@@ -54,6 +54,11 @@ def get_best_model(sk_pipe: Pipeline, X_train: pd.DataFrame, Y_train: pd.Series,
 #Serialize:
 def save_pipeline(best_pipe: Pipeline, save_path: str, run_id: str):
     joblib.dump(best_pipe, save_path)
+    # Log the original model as an artifact:
+    mlflow.sklearn.log_model(
+        sk_model = best_pipe, 
+        artifact_path = MODELNAME
+    )
     # Register also to Model Registry (production-ready):
     model_uri = f"runs:/{run_id}/{MODELNAME}"
     mlflow.register_model(model_uri, MODELNAME)
